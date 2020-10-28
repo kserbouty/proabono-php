@@ -207,7 +207,7 @@ class Usage {
         if ($this->increment) {
             $data['Increment'] = $this->increment;
         }
-        else if ($this->quantityCurrent) {
+        else if (!is_null($this->quantityCurrent)) {
             $data['QuantityCurrent'] = $this->quantityCurrent;
         }
         else if (isset($this->is_enabled)) {
