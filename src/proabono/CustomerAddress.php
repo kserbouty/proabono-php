@@ -1,5 +1,7 @@
 <?php
 
+use const ProAbono\PATH_BILLING_ADDRESS;
+
 /**
  * Billing Address model
  *

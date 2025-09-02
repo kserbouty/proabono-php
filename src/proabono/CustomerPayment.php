@@ -1,5 +1,7 @@
 <?php
 
+use const ProAbono\PATH_PAYMENT_SETTINGS;
+
 /**
  * Payment Settings model
  *

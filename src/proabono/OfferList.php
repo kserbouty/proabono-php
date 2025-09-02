@@ -1,5 +1,7 @@
 <?php
 
+use const ProAbono\PATH_OFFERS;
+
 /**
  * Offers List model
  *

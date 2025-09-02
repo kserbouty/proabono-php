@@ -1,5 +1,7 @@
 <?php
 
+use const ProAbono\PATH_CUSTOMERS;
+
 /**
  * Customers List model
  *
