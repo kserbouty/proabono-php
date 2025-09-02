@@ -55,7 +55,7 @@ class Request
      */
     public static function post($url, $input)
     {
-        // Initialisation des paramètres de configuration.
+        // Initialization of the configuration.
         ProAbono::ensureInitialized();
 
         $jsonData = json_encode($input);
@@ -91,7 +91,7 @@ class Request
      * Prepare the response after the curl processing.
      *
      * Do the error administration,
-     * return a ProAbonoError object if is_succes return false.
+     * return a ProAbonoError object if isSuccess return false.
      *
      * @param $rawData
      * @param $http_status

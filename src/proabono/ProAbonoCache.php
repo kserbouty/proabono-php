@@ -39,7 +39,7 @@ class ProAbonoCache
 
         // if none
         if (!isset($cacheByCustomer)) {
-            // instanciate
+            // instantiate
             $cacheByCustomer = array();
         }
         // create a new cache
@@ -63,7 +63,7 @@ class ProAbonoCache
 
         // if none
         if (!isset($cacheByCustomer)) {
-            // instanciate
+            // instantiate
             $cacheByCustomer = array();
         }
         // create a new cache
