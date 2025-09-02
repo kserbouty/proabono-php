@@ -11,7 +11,6 @@
  */
 class Customer
 {
-
     /**
      * @var int $id Id of your offer.
      */
@@ -98,7 +97,7 @@ class Customer
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
             // Store into the cache
             ProAbonoCache::storeCustomer($refCustomer, $response->data);
@@ -136,14 +135,14 @@ class Customer
         $response = Request::post($url, $data);
 
         // If response is success, fill the data.
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
             // store into the cache
             ProAbonoCache::storeCustomer($this->refCustomer, $response->data);
         }
+
         return $response;
     }
-
 
     /**
      * Fill our object with the raw ProAbono data.

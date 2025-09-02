@@ -55,21 +55,21 @@ class Usage
     public $typeFeature;
 
     /**
-     * @var bool $is_included
+     * @var bool $isIncluded
      *
      * (Only for OnOff offer)
      * It indicates if the offer is included in the subscription of the offer
      * False indicates that the offer can be enabled
      */
-    public $is_included;
+    public $isIncluded;
 
     /**
-     * @var bool $is_enabled
+     * @var bool $isEnabled
      *
      * (Only for OnOff offer)
      * It indicates if the offer is enabled in the subscription of the offer
      */
-    public $is_enabled;
+    public $isEnabled;
 
     /**
      * @var integer $quantityIncluded
@@ -151,7 +151,7 @@ class Usage
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 
@@ -173,8 +173,8 @@ class Usage
         $this->refFeature = isset($data->ReferenceFeature) ? $data->ReferenceFeature : null;
         $this->refCustomer = isset($data->ReferenceCustomer) ? $data->ReferenceCustomer : null;
         $this->typeFeature = isset($data->TypeFeature) ? $data->TypeFeature : null;
-        $this->is_included = isset($data->IsIncluded) ? $data->IsIncluded : null;
-        $this->is_enabled = isset($data->IsEnabled) ? $data->IsEnabled : null;
+        $this->isIncluded = isset($data->IsIncluded) ? $data->IsIncluded : null;
+        $this->isEnabled = isset($data->IsEnabled) ? $data->IsEnabled : null;
         $this->quantityIncluded = isset($data->QuantityIncluded) ? $data->QuantityIncluded : null;
         $this->quantityCurrent = isset($data->QuantityCurrent) ? $data->QuantityCurrent : null;
         $this->datePeriodStart = isset($data->DatePeriodStart) ? $data->DatePeriodStart : null;
@@ -203,20 +203,21 @@ class Usage
             $data['Increment'] = $this->increment;
         } else if ($this->quantityCurrent) {
             $data['QuantityCurrent'] = $this->quantityCurrent;
-        } else if (isset($this->is_enabled)) {
-            $data['IsEnabled'] = $this->is_enabled;
+        } else if (isset($this->isEnabled)) {
+            $data['IsEnabled'] = $this->isEnabled;
         }
 
         // Send url with an array.
         $response = Request::post(PATH_USAGE, $data);
 
         // If response is success, fill the data.
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
 
             // We refresh the cache
             UsageList::ensureCachedData($this->refCustomer, true);
         }
+
         return $response;
     }
 }

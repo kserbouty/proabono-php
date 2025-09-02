@@ -62,7 +62,7 @@ class UsageList extends ListBase
 
         // If response success:
         if (
-            $response->is_success()
+            $response->isSuccess()
             // and data is set:
             && (isset($response->data))
         ) {
@@ -104,7 +104,7 @@ class UsageList extends ListBase
 
         // If response success:
         if (
-            $response->is_success()
+            $response->isSuccess()
             // and data is set:
             && (isset($response->data))
         ) {
@@ -158,7 +158,7 @@ class UsageList extends ListBase
 
         // If response success:
         if (
-            $response->is_success()
+            $response->isSuccess()
             // and data is set:
             && (isset($response->data))
         ) {
@@ -211,7 +211,7 @@ class UsageList extends ListBase
 
         // If response success:
         if (
-            $response->is_success()
+            $response->isSuccess()
             // and data is set:
             && (isset($response->data))
         ) {

@@ -87,9 +87,9 @@ class Subscription
     public $stateSubscriptionAfterTerm;
 
     /**
-     * @var bool $is_trial Indicates if the current period is a trial period or not
+     * @var bool $isTrial Indicates if the current period is a trial period or not
      */
-    public $is_trial;
+    public $isTrial;
 
     /**
      * @var integer $countDaysTrial Number of days remaining in the trial period
@@ -97,22 +97,22 @@ class Subscription
     public $countDaysTrial;
 
     /**
-     * @var bool $is_engaged Indicates if the Customer is still in the minimum commitment period
+     * @var bool $isEngaged Indicates if the Customer is still in the minimum commitment period
      */
-    public $is_engaged;
+    public $isEngaged;
 
     /**
-     * @var bool $is_customer_billable Indicates if the Customer is currently billable
+     * @var bool $isCustomerBillable Indicates if the Customer is currently billable
      */
-    public $is_customer_billable;
+    public $isCustomerBillable;
 
     /**
-     * @var bool $is_payment_capping_reached
+     * @var bool $isPaymentCappingReached
      *
      * Indicates if the Customer has exceeded the max duration limit of due payments
      * and/or the max limit of accumulated amount of due payments
      */
-    public $is_payment_capping_reached;
+    public $isPaymentCappingReached;
 
     /**
      * @var string $dateNextBilling Date of the Customer Next Billing
@@ -216,7 +216,7 @@ class Subscription
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 
@@ -237,13 +237,12 @@ class Subscription
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 
         return $response;
     }
-
 
     /**
      * Save the subscription in the api.
@@ -259,7 +258,7 @@ class Subscription
         // Send url with an array.
         $response = Request::post($url, $data);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 
@@ -288,11 +287,11 @@ class Subscription
         $this->datePeriodTerm = isset($data->DatePeriodTerm) ? $data->DatePeriodTerm : null;
         $this->dateTerm = isset($data->DateTerm) ? $data->DateTerm : null;
         $this->stateSubscriptionAfterTerm = isset($data->StateSubscriptionAfterTerm) ? $data->StateSubscriptionAfterTerm : null;
-        $this->is_trial = isset($data->IsTrial) ? $data->IsTrial : null;
+        $this->isTrial = isset($data->IsTrial) ? $data->IsTrial : null;
         $this->countDaysTrial = isset($data->CountDaysTrial) ? $data->CountDaysTrial : null;
-        $this->is_engaged = isset($data->IsEngaged) ? $data->IsEngaged : null;
-        $this->is_customer_billable = isset($data->IsCustomerBillable) ? $data->IsCustomerBillable : null;
-        $this->is_payment_capping_reached = isset($data->IsPaymentCappingReached) ? $data->IsPaymentCappingReached : null;
+        $this->isEngaged = isset($data->IsEngaged) ? $data->IsEngaged : null;
+        $this->isCustomerBillable = isset($data->IsCustomerBillable) ? $data->IsCustomerBillable : null;
+        $this->isPaymentCappingReached = isset($data->IsPaymentCappingReached) ? $data->IsPaymentCappingReached : null;
         $this->dateNextBilling = isset($data->DateNextBilling) ? $data->DateNextBilling : null;
         $this->titleLocalized = isset($data->TitleLocalized) ? $data->TitleLocalized : null;
         $this->amountUpFront = isset($data->AmountTrial) ? $data->AmountTrial : null;

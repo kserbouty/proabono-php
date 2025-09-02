@@ -105,7 +105,7 @@ class Request
         $response->status = $http_status;
 
         // Case Success:
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $response->data = $decoded;
         }
 

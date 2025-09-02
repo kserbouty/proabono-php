@@ -67,7 +67,7 @@ class Pricing
         $response = Request::post($url, $data);
 
         // If response is success, fill the data.
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 

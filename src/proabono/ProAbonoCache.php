@@ -104,7 +104,7 @@ class ProAbonoCache
     public $usages = null;
     private $timestamp = null;
 
-    public function is_expired()
+    public function isExpired()
     {
         // if timestamp is older than x seconds
         return (time() - $this->timestamp) >= ProAbono::$cacheExpires;

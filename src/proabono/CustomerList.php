@@ -29,7 +29,7 @@ class CustomerList extends ListBase
 
         // If response success:
         if (
-            $response->is_success()
+            $response->isSuccess()
             // and data is set:
             && (isset($response->data))
         ) {

@@ -18,7 +18,7 @@ class Response
      *
      * @return boolean True if success.
      */
-    public function is_success()
+    public function isSuccess()
     {
         return isset($this->status)
             && (
@@ -32,7 +32,7 @@ class Response
      *
      * @return boolean True if success.
      */
-    public function has_data()
+    public function hasData()
     {
         return isset($this->data);
     }

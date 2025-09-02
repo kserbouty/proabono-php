@@ -30,9 +30,9 @@ class Offer
     public $refOffer;
 
     /**
-     * @var bool $is_visible Visibility of the offer in the hosted pages
+     * @var bool $isVisible Visibility of the offer in the hosted pages
      */
-    public $is_visible;
+    public $isVisible;
 
     /**
      * @var integer $amountUpFront Amount of the Upfront fee, Setup fee or Initial fee of your offer in cents
@@ -109,16 +109,16 @@ class Offer
      */
     public function fetch($refOffer)
     {
-
         $url = PATH_OFFER;
 
         $url = Utils::urlParam($url, 'ReferenceOffer', $refOffer);
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
 
@@ -132,7 +132,7 @@ class Offer
         $this->id = isset($data->Id) ? $data->Id : null;
         $this->name = isset($data->Name) ? $data->Name : null;
         $this->refOffer = isset($data->ReferenceOffer) ? $data->ReferenceOffer : null;
-        $this->is_visible = isset($data->IsVisible) ? $data->IsVisible : null;
+        $this->isVisible = isset($data->IsVisible) ? $data->IsVisible : null;
         $this->amountUpFront = isset($data->AmountUpFront) ? $data->AmountUpFront : null;
         $this->amountTrial = isset($data->AmountTrial) ? $data->AmountTrial : null;
         $this->durationTrial = isset($data->DurationTrial) ? $data->DurationTrial : null;

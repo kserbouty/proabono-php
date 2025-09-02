@@ -2,8 +2,13 @@
 
 ## 2025-09-02
 
+### Added
+
+- Add missing explicit visibility on class methods.
+
 ### Changed
 
+- Rename functions and variables as regular expressions.
 - Format PHP scripts with PSR-12 coding style.
 - Update copyright metadata to 2025.
 

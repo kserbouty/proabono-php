@@ -80,7 +80,7 @@ class CustomerAddress
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 
@@ -116,7 +116,7 @@ class CustomerAddress
         // Send url with an array.
         $response = Request::post($url, $data);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 

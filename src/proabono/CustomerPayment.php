@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Payment Settings model
  *
@@ -30,16 +29,16 @@ class CustomerPayment
      */
     public function fetch($refCustomer)
     {
-
         $url = PATH_PAYMENT_SETTINGS;
 
         $url = Utils::urlParam($url, 'ReferenceCustomer', $refCustomer);
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
 
@@ -52,7 +51,6 @@ class CustomerPayment
      */
     public function save($refCustomer)
     {
-
         // This is the data we send.
         $data = array(
             "TypePayment" => Utils::toString($this->typePayment),
@@ -66,9 +64,10 @@ class CustomerPayment
         // Send url with an array.
         $response = Request::post($url, $data);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
 

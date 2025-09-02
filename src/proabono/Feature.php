@@ -34,7 +34,7 @@ class Feature
     /**
      * @var bool $is_visible Visibility of the Feature in offers and hosted pages
      */
-    public $is_visible;
+    public $isVisible;
 
     /**
      * Retrieve a offer from the api,
@@ -52,13 +52,12 @@ class Feature
 
         $response = Request::get($url);
 
-        if ($response->is_success()) {
+        if ($response->isSuccess()) {
             $this->fill($response->data);
         }
 
         return $response;
     }
-
 
     /**
      * Fill our object with the raw ProAbono data.
@@ -71,6 +70,6 @@ class Feature
         $this->refFeature = isset($data->ReferenceFeature) ? $data->ReferenceFeature : null;
         $this->titleLocalized = isset($data->TitleLocalized) ? $data->TitleLocalized : null;
         $this->descriptionLocalized = isset($data->DescriptionLocalized) ? $data->DescriptionLocalized : null;
-        $this->is_visible = isset($data->IsVisible) ? $data->IsVisible : null;
+        $this->isVisible = isset($data->IsVisible) ? $data->IsVisible : null;
     }
 }
