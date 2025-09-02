@@ -1,0 +1,13 @@
+# Default
+*                   text=auto
+
+# Source
+*.php               text diff=php
+
+# Documentation
+*.md                text diff=markdown
+*.png               binary
+
+# Configuration
+.gitattributes      text
+.gitignore          text
