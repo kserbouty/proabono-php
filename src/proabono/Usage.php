@@ -1,20 +1,16 @@
 <?php
 
-
 /**
  * Usage model
  *
  * Manage the access to the api only for Usage.
  *
  * @link https://docs.proabono.com/api/#api---usages
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Usage {
-
-
+class Usage
+{
     /**
      * @var integer $idSegment Id of the Segment in which the Customer has been created
      */
@@ -109,7 +105,6 @@ class Usage {
     public $dateStamp;
     public $increment;
 
-
     /**
      * Retrieve a single usage,
      * by a reference feature and a reference subscription.
@@ -120,8 +115,8 @@ class Usage {
      * @return Response
      * @throws Exception
      */
-    public function fetch($refFeature, $refCustomer, $refreshCache = false) {
-
+    public function fetch($refFeature, $refCustomer, $refreshCache = false)
+    {
         /////////// CACHING STRATEGY ///////////
         if (ProAbono::$useCaching) {
 
@@ -159,16 +154,17 @@ class Usage {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
-
 
     /**
      * Fill our object with the raw ProAbono data.
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->idSegment = isset($data->IdSegment) ? $data->IdSegment : null;
         $this->idFeature = isset($data->IdFeature) ? $data->IdFeature : null;
         $this->idCustomer = isset($data->IdCustomer) ? $data->IdCustomer : null;
@@ -185,14 +181,13 @@ class Usage {
         $this->datePeriodEnd = isset($data->DatePeriodEnd) ? $data->DatePeriodEnd : null;
     }
 
-
     /**
      * @param $dateStamp
      * @return Response
      * @throws Exception
      */
-    public function save($dateStamp) {
-
+    public function save($dateStamp)
+    {
         // If dateStamp not exist, create a new date (ISO8601)
         if (!$dateStamp) {
             $dateStamp = date(DATE_ISO8601);
@@ -206,11 +201,9 @@ class Usage {
 
         if ($this->increment) {
             $data['Increment'] = $this->increment;
-        }
-        else if ($this->quantityCurrent) {
+        } else if ($this->quantityCurrent) {
             $data['QuantityCurrent'] = $this->quantityCurrent;
-        }
-        else if (isset($this->is_enabled)) {
+        } else if (isset($this->is_enabled)) {
             $data['IsEnabled'] = $this->is_enabled;
         }
 
@@ -223,10 +216,7 @@ class Usage {
 
             // We refresh the cache
             UsageList::ensureCachedData($this->refCustomer, true);
-
         }
         return $response;
     }
-
-
 }

@@ -6,10 +6,11 @@
  * Manage the access to the api only for Customer.
  *
  * @link https://docs.proabono.com/api/#api---customers
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-class Customer {
+class Customer
+{
 
     /**
      * @var int $id Id of your offer.
@@ -68,18 +69,21 @@ class Customer {
      * @return Response
      * @throws Exception
      */
-    public function fetch($refCustomer) {
+    public function fetch($refCustomer)
+    {
 
         /////////// CACHING STRATEGY ///////////
         if (ProAbono::$useCaching) {
             // Search for that customer into the cache
             $cached = ProAbonoCache::get($refCustomer);
             // If found
-            if (isset($cached)
+            if (
+                isset($cached)
                 // If customer is cached
                 && $cached->customer
                 // If not too old
-                && !$cached->is_expired()) {
+                && !$cached->is_expired()
+            ) {
                 // Fill the current customer with the cached data
                 $this->fill($cached->customer);
                 // Then exit
@@ -99,6 +103,7 @@ class Customer {
             // Store into the cache
             ProAbonoCache::storeCustomer($refCustomer, $response->data);
         }
+
         return $response;
     }
 
@@ -109,8 +114,8 @@ class Customer {
      * @return Response
      * @throws Exception
      */
-    public function save($refOffer = null) {
-
+    public function save($refOffer = null)
+    {
         // This is the data we have to send.
         $data = array(
             'Email' => Utils::toString($this->email),
@@ -145,7 +150,8 @@ class Customer {
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->id = isset($data->Id) ? $data->Id : null;
         $this->idSegment = isset($data->IdSegment) ? $data->IdSegment : null;
         $this->refCustomer = isset($data->ReferenceCustomer) ? $data->ReferenceCustomer : null;

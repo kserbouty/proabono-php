@@ -1,20 +1,16 @@
 <?php
 
-
 /**
  * Subscription model
  *
  * Manage the access to the api only for Subscription.
  *
  * @link https://docs.proabono.com/api/#api---subscriptions
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Subscription {
-
-
+class Subscription
+{
     /**
      * @var integer $id Id of your Subscription
      */
@@ -204,7 +200,6 @@ class Subscription {
      */
     public $links;
 
-
     /**
      * Retrieve a subscription,
      * by a reference offer.
@@ -213,8 +208,8 @@ class Subscription {
      * @return Response
      * @throws Exception
      */
-    public function fetchByCustomer($refCustomer) {
-
+    public function fetchByCustomer($refCustomer)
+    {
         $url = PATH_SUBSCRIPTION;
 
         $url = Utils::urlParam($url, 'ReferenceCustomer', $refCustomer);
@@ -224,9 +219,9 @@ class Subscription {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
-
 
     /**
      * Retrieve a subscription,
@@ -236,8 +231,8 @@ class Subscription {
      * @return Response
      * @throws Exception
      */
-    public function fetchById($id) {
-
+    public function fetchById($id)
+    {
         $url = PATH_SUBSCRIPTION . '/' . $id;
 
         $response = Request::get($url);
@@ -245,6 +240,7 @@ class Subscription {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
 
@@ -256,8 +252,8 @@ class Subscription {
      * @return Response
      * @throws Exception
      */
-    public function save($data) {
-
+    public function save($data)
+    {
         $url = PATH_SUBSCRIPTION;
 
         // Send url with an array.
@@ -266,16 +262,17 @@ class Subscription {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
-
 
     /**
      * Fill our object with the raw ProAbono data.
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->id = isset($data->Id) ? $data->Id : null;
         $this->idSegment = isset($data->IdSegment) ? $data->IdSegment : null;
         $this->idOffer = isset($data->IdOffer) ? $data->IdOffer : null;
@@ -312,6 +309,4 @@ class Subscription {
         $this->meta = isset($data->Metadata) ? $data->Metadata : null;
         $this->links = isset($data->Links) ? $data->Links : null;
     }
-
-
 }

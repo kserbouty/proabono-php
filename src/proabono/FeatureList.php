@@ -1,35 +1,33 @@
 <?php
 
-
 /**
  * Features List model
  *
  * Manage multiple features in an object.
  *
  * @link https://docs.proabono.com/api/#api---features
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class FeatureList extends ListBase {
-
-
+class FeatureList extends ListBase
+{
     /**
      * Retrieve all features from the api.
      *
      */
-    function fetch() {
-
+    function fetch()
+    {
         // Size page set to 1000 elements directly in the url.
         $url = PATH_FEATURES;
 
         $response = Request::get($url);
 
         // If response success:
-        if ($response->is_success()
+        if (
+            $response->is_success()
             // and data is set:
-            && (isset($response->data))) {
+            && (isset($response->data))
+        ) {
 
             foreach ($response->data->Items as $item) {
 
@@ -38,8 +36,7 @@ class FeatureList extends ListBase {
                 $this->push($feature);
             }
         }
+
         return $response;
     }
-
-
 }

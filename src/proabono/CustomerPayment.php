@@ -6,14 +6,11 @@
  *
  * Manage the access to the api for the payment settings.
  *
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class CustomerPayment {
-
-
+class CustomerPayment
+{
     /**
      * @var string $typePayment
      */
@@ -24,7 +21,6 @@ class CustomerPayment {
      */
     public $dateNextBilling;
 
-
     /**
      * Retrieve a payment settings by the reference customer.
      *
@@ -32,7 +28,8 @@ class CustomerPayment {
      * @return Response
      * @throws Exception
      */
-    public function fetch($refCustomer) {
+    public function fetch($refCustomer)
+    {
 
         $url = PATH_PAYMENT_SETTINGS;
 
@@ -46,7 +43,6 @@ class CustomerPayment {
         return $response;
     }
 
-
     /**
      * Save the payment settings by the reference customer.
      *
@@ -54,12 +50,13 @@ class CustomerPayment {
      * @return Response
      * @throws Exception
      */
-    public function save($refCustomer) {
+    public function save($refCustomer)
+    {
 
         // This is the data we send.
         $data = array(
-          "TypePayment" => Utils::toString($this->typePayment),
-          "DateNextBilling" => Utils::toString($this->dateNextBilling)
+            "TypePayment" => Utils::toString($this->typePayment),
+            "DateNextBilling" => Utils::toString($this->dateNextBilling)
         );
 
         $url = PATH_PAYMENT_SETTINGS;
@@ -73,19 +70,16 @@ class CustomerPayment {
             $this->fill($response->data);
         }
         return $response;
-
     }
-
 
     /**
      * Fill our object with the raw ProAbono data.
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->typePayment = isset($data->TypePayment) ? $data->TypePayment : null;
         $this->dateNextBilling = isset($data->DateNextBilling) ? $data->DateNextBilling : null;
     }
-
-
 }

@@ -1,17 +1,13 @@
 <?php
 
-
 /**
  * Request model.
  *
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Request {
-
-
+class Request
+{
     /**
      * Administration of the api call, using curl to make the request.
      *
@@ -19,8 +15,8 @@ class Request {
      * @return Response
      * @throws Exception
      */
-    public static function get($url) {
-
+    public static function get($url)
+    {
         // Initialization of the configuration.
         ProAbono::ensureInitialized();
 
@@ -49,7 +45,6 @@ class Request {
         return Request::prepareResponse($rawData, $http_status);
     }
 
-
     /**
      * Administration of the api call, using curl to make the request.
      *
@@ -58,7 +53,8 @@ class Request {
      * @return Response
      * @throws Exception
      */
-    public static function post($url, $input) {
+    public static function post($url, $input)
+    {
         // Initialisation des paramètres de configuration.
         ProAbono::ensureInitialized();
 
@@ -91,7 +87,6 @@ class Request {
         return Request::prepareResponse($rawData, $http_status);
     }
 
-
     /**
      * Prepare the response after the curl processing.
      *
@@ -102,8 +97,8 @@ class Request {
      * @param $http_status
      * @return Response
      */
-    private static function prepareResponse($rawData, $http_status) {
-
+    private static function prepareResponse($rawData, $http_status)
+    {
         $decoded = json_decode($rawData);
 
         $response = new Response();
@@ -144,8 +139,7 @@ class Request {
 
             $response->error = $error;
         }
+
         return $response;
     }
-
-
 }

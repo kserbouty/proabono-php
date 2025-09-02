@@ -1,20 +1,16 @@
 <?php
 
-
 /**
  * Subscriptions List model
  *
  * Manage multiple subscriptions in an object.
  *
  * @link https://docs.proabono.com/api/#api---subscriptions
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class SubscriptionList extends ListBase {
-
-
+class SubscriptionList extends ListBase
+{
     /**
      * Retrieve all subscriptions from the api,
      * by the reference subscription or the reference subscription buyer.
@@ -25,8 +21,8 @@ class SubscriptionList extends ListBase {
      * @return Response
      * @throws Exception
      */
-    function fetch($page, $refCustomer, $refCustomerBuyer) {
-
+    function fetch($page, $refCustomer, $refCustomerBuyer)
+    {
         $url = PATH_SUBSCRIPTIONS;
 
         $url = Utils::urlParam($url, 'Page', $page);
@@ -38,27 +34,25 @@ class SubscriptionList extends ListBase {
         $response = Request::get($url);
 
         // If response success:
-        if ($response->is_success()
+        if (
+            $response->is_success()
             // and data is set:
-            && (isset($response->data))) {
+            && (isset($response->data))
+        ) {
+            // Set pagination properties.
+            $this->page = $response->data->Page;
+            $this->sizePage = $response->data->SizePage;
+            $this->count = $response->data->Count;
+            $this->totalItems = $response->data->TotalItems;
 
-                // Set pagination properties.
-                $this->page = $response->data->Page;
-                $this->sizePage = $response->data->SizePage;
-                $this->count = $response->data->Count;
-                $this->totalItems = $response->data->TotalItems;
+            foreach ($response->data->Items as $item) {
 
-                foreach ($response->data->Items as $item) {
-
-                    $subscription = new Subscription();
-                    $subscription->fill($item);
-                    $this->push($subscription);
-
-                }
-
+                $subscription = new Subscription();
+                $subscription->fill($item);
+                $this->push($subscription);
+            }
         }
+
         return $response;
     }
-
-
 }

@@ -1,29 +1,25 @@
 <?php
 
-
 /**
  * Utility model
  *
  * @copyright Copyright (c) 2018 ProAbono
  * @license MIT
  */
-
-
-class Utils {
-
-
+class Utils
+{
     /**
      * Replace an empty string by a null value.
      *
      * @param $string
      * @return null
      */
-    public static function toString($string) {
+    public static function toString($string)
+    {
         return ($string == '')
             ? null
             : $string;
     }
-
 
     /**
      * Create an associative array from raw ProAbono links.
@@ -31,18 +27,18 @@ class Utils {
      * @param $items All links sended here.
      * @return array $links
      */
-    public static function toLinks($items) {
-
+    public static function toLinks($items)
+    {
         $links = array();
 
         if ($items) {
-            foreach ($items as $item )  {
+            foreach ($items as $item) {
                 $links[$item->rel] = $item->href;
             }
         }
+
         return $links;
     }
-
 
     /**
      * Append given parameter at the end of the given url.
@@ -52,18 +48,17 @@ class Utils {
      * @param $value
      * @return string $url
      */
-    public static function urlParam($url, $param, $value) {
-
+    public static function urlParam($url, $param, $value)
+    {
         // We need all parameters to set the given url:
         if ((isset($url)) && (isset($param)) && (isset($value))) {
-            if (strpos($url, '?' )) {
+            if (strpos($url, '?')) {
                 $url = $url . '&' . $param . '=' . $value;
             } else {
                 $url = $url . '?' . $param . '=' . $value;
             }
         }
+
         return $url;
     }
-
-
 }

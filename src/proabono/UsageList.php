@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Usages List model
  *
@@ -10,11 +9,8 @@
  * @copyright Copyright (c) 2018 ProAbono
  * @license MIT
  */
-
-
-class UsageList extends ListBase {
-
-
+class UsageList extends ListBase
+{
     /**
      * Retrieve all usages from the api,
      * by a reference customer.
@@ -24,14 +20,15 @@ class UsageList extends ListBase {
      * @return Response
      * @throws Exception
      */
-    function fetchByCustomer($refCustomer, $refreshCache = false) {
-
+    function fetchByCustomer($refCustomer, $refreshCache = false)
+    {
         /////////// CACHING STRATEGY ///////////
 
         if (ProAbono::$useCaching) {
 
             // get the cached data
             $usages = UsageList::ensureCachedData($refCustomer, $refreshCache);
+
             // if we have data
             if (isset($usages)) {
                 // Set pagination properties.
@@ -45,11 +42,9 @@ class UsageList extends ListBase {
                     $converted = new Usage();
                     $converted->fill($item);
                     $this->push($converted);
-
                 }
                 // success
                 return Response::success();
-
             }
             return Response::usageNotFound();
         }
@@ -65,10 +60,11 @@ class UsageList extends ListBase {
         $response = Request::get($url);
 
         // If response success:
-        if ($response->is_success()
+        if (
+            $response->is_success()
             // and data is set:
-            && (isset($response->data))) {
-
+            && (isset($response->data))
+        ) {
             // Set pagination properties.
             $this->page = $response->data->Page;
             $this->sizePage = $response->data->SizePage;
@@ -82,9 +78,9 @@ class UsageList extends ListBase {
                 $this->push($usage);
             }
         }
+
         return $response;
     }
-
 
     /**
      * Retrieve all usages from the api,
@@ -95,8 +91,8 @@ class UsageList extends ListBase {
      * @return Response
      * @throws Exception
      */
-    function fetchByFeature($refFeature, $page) {
-
+    function fetchByFeature($refFeature, $page)
+    {
         $url = PATH_USAGES;
 
         $url = Utils::urlParam($url, 'Page', $page);
@@ -106,10 +102,11 @@ class UsageList extends ListBase {
         $response = Request::get($url);
 
         // If response success:
-        if ($response->is_success()
+        if (
+            $response->is_success()
             // and data is set:
-            && (isset($response->data))) {
-
+            && (isset($response->data))
+        ) {
             // Set pagination properties.
             $this->page = $response->data->Page;
             $this->sizePage = $response->data->SizePage;
@@ -123,6 +120,7 @@ class UsageList extends ListBase {
                 $this->push($usage);
             }
         }
+
         return $response;
     }
 
@@ -133,18 +131,20 @@ class UsageList extends ListBase {
      * @return null
      * @throws Exception
      */
-    public static function ensureCachedData($refCustomer, $refreshCache) {
-
+    public static function ensureCachedData($refCustomer, $refreshCache)
+    {
         // Search for that customer into the cache
         $cached = ProAbonoCache::get($refCustomer);
         // If found
-        if (isset($cached)
+        if (
+            isset($cached)
             // If usages are cached
             && $cached->usages
             // If not too old
             && !$cached->is_expired()
             // If not refreshing
-            && !$refreshCache )  {
+            && !$refreshCache
+        ) {
             return $cached->usages;
         }
         /////////////////////////////////
@@ -157,23 +157,26 @@ class UsageList extends ListBase {
         $response = Request::get($url);
 
         // If response success:
-        if ($response->is_success()
+        if (
+            $response->is_success()
             // and data is set:
-            && (isset($response->data))) {
+            && (isset($response->data))
+        ) {
             // store into the cache
             ProAbonoCache::storeUsages($refCustomer, $response->data->Items);
             return $response->data->Items;
         }
+
         return null;
     }
-
 
     /**
      * @param $usages
      * @param $refFeature
      * @return null
      */
-    public static function getUsageForFeature($usages, $refFeature) {
+    public static function getUsageForFeature($usages, $refFeature)
+    {
         // if no usages, ignore
         if (!isset($usages))
             return null;
@@ -187,7 +190,6 @@ class UsageList extends ListBase {
         return null;
     }
 
-
     /**
      * @param $refCustomer
      * @param $idCustomer
@@ -195,7 +197,8 @@ class UsageList extends ListBase {
      * @return Response
      * @throws Exception
      */
-    public function validateSubscription($refCustomer, $idCustomer, $idSubscription) {
+    public function validateSubscription($refCustomer, $idCustomer, $idSubscription)
+    {
 
         $url = PATH_USAGES;
 
@@ -208,15 +211,14 @@ class UsageList extends ListBase {
         $response = Request::get($url);
 
         // If response success:
-        if ($response->is_success()
+        if (
+            $response->is_success()
             // and data is set:
-            && (isset($response->data))) {
+            && (isset($response->data))
+        ) {
 
             return $this->fetchByCustomer($refCustomer, true);
-
         }
         return $response;
     }
-
-
 }

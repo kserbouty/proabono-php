@@ -1,5 +1,12 @@
 # Changelog
 
+## 2025-09-02
+
+### Changed
+
+- Format PHP scripts with PSR-12 coding style.
+- Update copyright metadata to 2025.
+
 ## 2025-09-01
 
 ### Added

@@ -1,29 +1,25 @@
 <?php
 
-
 /**
  * Response model
  *
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Response {
-
-
+class Response
+{
     public $status;
     public $data;
     public $error;
     public $errors;
-
 
     /**
      * Verify the response status.
      *
      * @return boolean True if success.
      */
-    public function is_success() {
+    public function is_success()
+    {
         return isset($this->status)
             && (
                 ($this->status == 200)
@@ -31,21 +27,21 @@ class Response {
                 || ($this->status == 204));
     }
 
-
     /**
      * Check if response has data
      *
      * @return boolean True if success.
      */
-    public function has_data() {
+    public function has_data()
+    {
         return isset($this->data);
     }
-
 
     /**
      * @return Response
      */
-    public static function success() {
+    public static function success()
+    {
         $response = new Response();
         $response->status = 200;
         return $response;
@@ -54,7 +50,8 @@ class Response {
     /**
      * @return Response
      */
-    public static function usageNotFound() {
+    public static function usageNotFound()
+    {
         $response = new Response();
         $response->status = 404;
         $response->error = new ProAbonoError();
@@ -62,5 +59,4 @@ class Response {
         $response->error->code = 'Error.Api.Usage.NoneMatching';
         return $response;
     }
-
 }

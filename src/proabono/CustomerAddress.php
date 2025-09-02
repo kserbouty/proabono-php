@@ -5,14 +5,11 @@
  *
  * Manage the access to the api for the billing address.
  *
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class CustomerAddress {
-
-
+class CustomerAddress
+{
     /**
      * @var string $company
      */
@@ -68,7 +65,6 @@ class CustomerAddress {
      */
     public $taxInformation;
 
-
     /**
      * Retrieve billing address by the reference customer.
      *
@@ -76,8 +72,8 @@ class CustomerAddress {
      * @return Response
      * @throws Exception
      */
-    public function fetch($refCustomer) {
-
+    public function fetch($refCustomer)
+    {
         $url = PATH_BILLING_ADDRESS;
 
         $url = Utils::urlParam($url, 'ReferenceCustomer', $refCustomer);
@@ -87,9 +83,9 @@ class CustomerAddress {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
-
 
     /**
      * Save the billing address data by their reference customer.
@@ -98,8 +94,8 @@ class CustomerAddress {
      * @return Response
      * @throws Exception
      */
-    public function save($refCustomer) {
-
+    public function save($refCustomer)
+    {
         // This is data we have to send.
         $data = array(
             "Company" => Utils::toString($this->company),
@@ -123,16 +119,17 @@ class CustomerAddress {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
+
         return $response;
     }
-
 
     /**
      * Fill our object with the raw ProAbono data.
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->company = isset($data->Company) ? $data->Company : null;
         $this->firstName = isset($data->FirstName) ? $data->FirstName : null;
         $this->lastName = isset($data->LastName) ? $data->LastName : null;
@@ -145,6 +142,4 @@ class CustomerAddress {
         $this->phone = isset($data->Phone) ? $data->Phone : null;
         $this->taxInformation = isset($data->TaxInformation) ? $data->TaxInformation : null;
     }
-
-
 }

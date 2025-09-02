@@ -1,20 +1,16 @@
 <?php
 
-
 /**
  * Compute Pricing model
  *
  * Manage the access to the api only for Compute Pricing.
  *
  * @link https://docs.proabono.com/api/#api---compute-pricing
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Pricing {
-
-
+class Pricing
+{
     // BASE PRICING OBJECT
     public $idSubscription;
     public $idFeature;
@@ -35,7 +31,6 @@ class Pricing {
     // DETAILS Array of Pricing
     public $details;
 
-
     /**
      * Fetch compute pricing for an usage.
      *
@@ -43,8 +38,8 @@ class Pricing {
      * @return Response
      * @throws Exception
      */
-    public function computeForUsage($usage) {
-
+    public function computeForUsage($usage)
+    {
         $url = PATH_PRICING_USAGE;
 
         $url = Utils::urlParam($url, 'NextTerm', 'true');
@@ -62,11 +57,9 @@ class Pricing {
 
         if ($usage->increment) {
             $data['Increment'] = $usage->increment;
-        }
-        else if ($usage->quantityCurrent) {
+        } else if ($usage->quantityCurrent) {
             $data['QuantityCurrent'] = $usage->quantityCurrent;
-        }
-        else if (isset($usage->is_enabled)) {
+        } else if (isset($usage->is_enabled)) {
             $data['IsEnabled'] = $usage->is_enabled;
         }
 
@@ -81,12 +74,11 @@ class Pricing {
         return $response;
     }
 
-
     /**
      * @param $data
      */
-    public function fill($data) {
-
+    public function fill($data)
+    {
         // Fill Pricing Object
         $this->idSubscription = isset($data->IdSubscription) ? $data->IdSubscription : null;
         $this->idFeature = isset($data->IdFeature) ? $data->IdFeature : null;
@@ -123,7 +115,5 @@ class Pricing {
             $this->nextTerm = new Pricing();
             $this->nextTerm->fill($data->NextTerm);
         }
-
     }
-
 }

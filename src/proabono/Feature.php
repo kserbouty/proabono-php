@@ -1,20 +1,16 @@
 <?php
 
-
 /**
  * Feature model
  *
  * Manage the access to the api only for Feature.
  *
  * @link https://docs.proabono.com/api/#api---features
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Feature {
-
-
+class Feature
+{
     /**
      * @var int $id Id of the Feature Object
      */
@@ -40,7 +36,6 @@ class Feature {
      */
     public $is_visible;
 
-
     /**
      * Retrieve a offer from the api,
      * by a reference feature.
@@ -49,8 +44,8 @@ class Feature {
      * @return Response
      * @throws Exception
      */
-    public function fetch($refFeature) {
-
+    public function fetch($refFeature)
+    {
         $url = PATH_FEATURE;
 
         $url = Utils::urlParam($url, 'ReferenceFeature', $refFeature);
@@ -60,7 +55,8 @@ class Feature {
         if ($response->is_success()) {
             $this->fill($response->data);
         }
-    return $response;
+
+        return $response;
     }
 
 
@@ -69,13 +65,12 @@ class Feature {
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->id = isset($data->Id) ? $data->Id : null;
         $this->refFeature = isset($data->ReferenceFeature) ? $data->ReferenceFeature : null;
         $this->titleLocalized = isset($data->TitleLocalized) ? $data->TitleLocalized : null;
         $this->descriptionLocalized = isset($data->DescriptionLocalized) ? $data->DescriptionLocalized : null;
         $this->is_visible = isset($data->IsVisible) ? $data->IsVisible : null;
     }
-
-
 }

@@ -5,21 +5,19 @@
  *
  * Cached data for a single customer
  *
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class ProAbonoCache {
-
-
+class ProAbonoCache
+{
     /////////////// STATIC ///////////////
 
-    public static function get($refCustomer) {
+    public static function get($refCustomer)
+    {
         // look for the cache-by-user table
         $cacheByCustomer = isset($_SESSION['PROABONO_CACHE_BY_USER'])
             ?  $_SESSION['PROABONO_CACHE_BY_USER']
-            : null ;
+            : null;
 
         // if none, exit
         if (!isset($cacheByCustomer)) {
@@ -32,11 +30,12 @@ class ProAbonoCache {
             : null;
     }
 
-    public static function storeCustomer($refCustomer, $customer) {
+    public static function storeCustomer($refCustomer, $customer)
+    {
         // look for the cache-by-user table
         $cacheByCustomer = isset($_SESSION['PROABONO_CACHE_BY_USER'])
             ?  $_SESSION['PROABONO_CACHE_BY_USER']
-            : null ;
+            : null;
 
         // if none
         if (!isset($cacheByCustomer)) {
@@ -55,11 +54,12 @@ class ProAbonoCache {
         $_SESSION['PROABONO_CACHE_BY_USER'] = $cacheByCustomer;
     }
 
-    public static function storeUsages($refCustomer, $usages) {
+    public static function storeUsages($refCustomer, $usages)
+    {
         // look for the cache-by-user table
         $cacheByCustomer = isset($_SESSION['PROABONO_CACHE_BY_USER'])
             ?  $_SESSION['PROABONO_CACHE_BY_USER']
-            : null ;
+            : null;
 
         // if none
         if (!isset($cacheByCustomer)) {
@@ -78,15 +78,18 @@ class ProAbonoCache {
         $_SESSION['PROABONO_CACHE_BY_USER'] = $cacheByCustomer;
     }
 
-    public static function clear($refCustomer) {
+    public static function clear($refCustomer)
+    {
         // look for the cache-by-user table
         $cacheByCustomer = isset($_SESSION['PROABONO_CACHE_BY_USER'])
             ?  $_SESSION['PROABONO_CACHE_BY_USER']
-            : null ;
+            : null;
 
         // if none, exit
-        if (!isset($cacheByCustomer)
-            && !isset($cacheByCustomer[$refCustomer])) {
+        if (
+            !isset($cacheByCustomer)
+            && !isset($cacheByCustomer[$refCustomer])
+        ) {
             return null;
         }
         // and store
@@ -95,18 +98,17 @@ class ProAbonoCache {
 
     //////////////////////////////////////
 
-
     ////////////// INSTANCE //////////////
 
     public $customer = null;
     public $usages = null;
     private $timestamp = null;
 
-    public function is_expired() {
+    public function is_expired()
+    {
         // if timestamp is older than x seconds
-        return (time() - $this->timestamp) >= ProAbono::$cacheExpires ;
+        return (time() - $this->timestamp) >= ProAbono::$cacheExpires;
     }
 
     //////////////////////////////////////
-
 }

@@ -1,20 +1,16 @@
 <?php
 
-
 /**
  * Offer model
  *
  * Manage the access to the api only for Offer.
  *
  * @link https://docs.proabono.com/api/#api---offers
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright (c) 2025 ProAbono
  * @license MIT
  */
-
-
-class Offer {
-
-
+class Offer
+{
     /**
      * @var integer $id Id of the Offer Object
      */
@@ -103,7 +99,6 @@ class Offer {
      */
     public $links;
 
-
     /**
      * Retrieve an offer from the api,
      * by the reference offer.
@@ -112,7 +107,8 @@ class Offer {
      * @return Response
      * @throws Exception
      */
-    public function fetch($refOffer) {
+    public function fetch($refOffer)
+    {
 
         $url = PATH_OFFER;
 
@@ -126,13 +122,13 @@ class Offer {
         return $response;
     }
 
-
     /**
      * Fill our object with the raw ProAbono data.
      *
      * @param $data
      */
-    public function fill($data) {
+    public function fill($data)
+    {
         $this->id = isset($data->Id) ? $data->Id : null;
         $this->name = isset($data->Name) ? $data->Name : null;
         $this->refOffer = isset($data->ReferenceOffer) ? $data->ReferenceOffer : null;
@@ -151,6 +147,4 @@ class Offer {
         $this->features = isset($data->Features) ? $data->Features : null;
         $this->links = isset($data->Links) ? $data->Links : null;
     }
-
-
 }
