@@ -6,30 +6,32 @@ namespace ProAbono;
  * Common and Base classes
  */
 
-require_once(__DIR__ . '/proabono/ListBase.php');
-require_once(__DIR__ . '/proabono/ProAbonoCache.php');
-require_once(__DIR__ . '/proabono/ProAbonoError.php');
-require_once(__DIR__ . '/proabono/ProAbono.php');
-require_once(__DIR__ . '/proabono/Utils.php');
+use ProAbono\Api\ListBase;
+use ProAbono\Api\ProAbonoCache;
+use ProAbono\Api\ProAbonoError;
+use ProAbono\Api\ProAbono;
+use ProAbono\Api\Utils;
 
 /**
  * Request / Response
  */
-require_once(__DIR__ . '/proabono/Request.php');
-require_once(__DIR__ . '/proabono/Response.php');
+
+use ProAbono\Api\Request;
+use ProAbono\Api\Response;
 
 /*
  * Customers
  */
+
 const PATH_CUSTOMER = '/v1/Customer';
 const PATH_CUSTOMERS = '/v1/Customers';
 const PATH_PAYMENT_SETTINGS = '/v1/CustomerSettingsPayment';
 const PATH_BILLING_ADDRESS = '/v1/CustomerBillingAddress';
 
-require_once(__DIR__ . '/proabono/Customer.php');
-require_once(__DIR__ . '/proabono/CustomerList.php');
-require_once(__DIR__ . '/proabono/CustomerAddress.php');
-require_once(__DIR__ . '/proabono/CustomerPayment.php');
+use ProAbono\Api\Customer;
+use ProAbono\Api\CustomerList;
+use ProAbono\Api\CustomerAddress;
+use ProAbono\Api\CustomerPayment;
 
 /**
  * Features
@@ -37,8 +39,8 @@ require_once(__DIR__ . '/proabono/CustomerPayment.php');
 const PATH_FEATURE = '/v1/Feature';
 const PATH_FEATURES = '/v1/Features?SizePage=1000';
 
-require_once(__DIR__ . '/proabono/Feature.php');
-require_once(__DIR__ . '/proabono/FeatureList.php');
+use ProAbono\Api\Feature;
+use ProAbono\Api\FeatureList;
 
 /**
  * Offers
@@ -46,15 +48,15 @@ require_once(__DIR__ . '/proabono/FeatureList.php');
 const PATH_OFFER = '/v1/Offer';
 const PATH_OFFERS = '/v1/Offers?SizePage=1000';
 
-require_once(__DIR__ . '/proabono/Offer.php');
-require_once(__DIR__ . '/proabono/OfferList.php');
+use ProAbono\Api\Offer;
+use ProAbono\Api\OfferList;
 
 /**
  * Pricing
  */
 const PATH_PRICING_USAGE = '/v1/Pricing/Usage';
 
-require_once(__DIR__ . '/proabono/Pricing.php');
+use ProAbono\Api\Pricing;
 
 /**
  * Subscriptions
@@ -62,8 +64,8 @@ require_once(__DIR__ . '/proabono/Pricing.php');
 const PATH_SUBSCRIPTION = '/v1/Subscription';
 const PATH_SUBSCRIPTIONS = '/v1/Subscriptions';
 
-require_once(__DIR__ . '/proabono/Subscription.php');
-require_once(__DIR__ . '/proabono/SubscriptionList.php');
+use ProAbono\Api\Subscription;
+use ProAbono\Api\SubscriptionList;
 
 /**
  * Usages
@@ -71,5 +73,5 @@ require_once(__DIR__ . '/proabono/SubscriptionList.php');
 const PATH_USAGE = '/v1/Usage';
 const PATH_USAGES = '/v1/Usages';
 
-require_once(__DIR__ . '/proabono/Usage.php');
-require_once(__DIR__ . '/proabono/UsageList.php');
+use ProAbono\Api\Usage;
+use ProAbono\Api\UsageList;

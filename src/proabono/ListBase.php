@@ -1,5 +1,10 @@
 <?php
 
+namespace ProAbono\Api;
+
+use Iterator;
+use Countable;
+
 /**
  * Base class for all list objects
  *

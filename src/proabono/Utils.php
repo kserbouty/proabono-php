@@ -1,5 +1,7 @@
 <?php
 
+namespace ProAbono\Api;
+
 /**
  * Utility model
  *

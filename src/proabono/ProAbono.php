@@ -1,5 +1,9 @@
 <?php
 
+namespace ProAbono\Api;
+
+use Exception;
+
 /**
  * ProAbono model
  *

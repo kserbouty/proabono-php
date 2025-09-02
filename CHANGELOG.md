@@ -5,6 +5,7 @@
 ### Added
 
 - Add return types to match Iterator and Countable methods.
+- Add namespaces for classes and constants.
 - Add missing explicit visibility on class methods.
 
 ### Changed

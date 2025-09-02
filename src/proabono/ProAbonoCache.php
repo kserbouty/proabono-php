@@ -1,5 +1,7 @@
 <?php
 
+namespace ProAbono\Api;
+
 /**
  * Cache model
  *

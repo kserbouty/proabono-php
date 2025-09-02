@@ -1,5 +1,7 @@
 <?php
 
+namespace ProAbono\Api;
+
 use const ProAbono\PATH_FEATURE;
 
 /**
