@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add return types to match Iterator and Countable methods.
 - Add missing explicit visibility on class methods.
 
 ### Changed
