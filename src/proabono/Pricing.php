@@ -46,7 +46,7 @@ class Pricing
 
         // If dateStamp not exist, create a new date (ISO8601)
         if (!$usage->dateStamp) {
-            $usage->dateStamp = date(DATE_ISO8601);
+            $usage->dateStamp = date(DATE_ATOM);
         }
 
         $data = array(

@@ -9,9 +9,9 @@
 <br>
 
 <p align="center">
-    <a href="https://www.php.net/manual/php5.php">
-        <img src="https://img.shields.io/badge/php-5.6-777BB4?style=flat&logo=php"
-        alt="php-5" /></a>
+    <a href="https://www.php.net/releases/8.4/en.php">
+        <img src="https://img.shields.io/badge/php-8.4-777BB4?style=flat&logo=php"
+        alt="php-8" /></a>
     <a href="https://www.php.net/manual/en/book.curl.php">
         <img src="https://img.shields.io/badge/curl-2.0-777BB4?style=flat&logo=php"
         alt="curl-2" /></a>

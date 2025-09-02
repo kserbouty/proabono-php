@@ -190,7 +190,7 @@ class Usage
     {
         // If dateStamp not exist, create a new date (ISO8601)
         if (!$dateStamp) {
-            $dateStamp = date(DATE_ISO8601);
+            $dateStamp = date(DATE_ATOM);
         }
 
         $data = array(

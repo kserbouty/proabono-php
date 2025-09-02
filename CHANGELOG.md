@@ -11,6 +11,7 @@
 
 - Update if and elseif statements to improve readability.
 - Rename functions and variables as regular expressions.
+- Replace deprecated parameters for date functions.
 - Format PHP scripts with PSR-12 coding style.
 - Update copyright metadata to 2025.
 
