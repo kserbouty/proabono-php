@@ -178,13 +178,16 @@ class UsageList extends ListBase
     public static function getUsageForFeature($usages, $refFeature)
     {
         // if no usages, ignore
-        if (!isset($usages))
+        if (!isset($usages)) {
+
             return null;
+        }
 
         foreach ($usages as $usage) {
+            if ($usage->ReferenceFeature === $refFeature) {
 
-            if ($usage->ReferenceFeature === $refFeature)
                 return $usage;
+            }
         }
         // if not found
         return null;

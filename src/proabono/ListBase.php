@@ -31,7 +31,10 @@ class ListBase implements Iterator, Countable
      */
     public $totalItems = null;
 
-    public function __construct() {}
+    public function __construct()
+    {
+        // WIP
+    }
 
     /**
      * Rewind the Iterator to the first element.
@@ -64,8 +67,10 @@ class ListBase implements Iterator, Countable
      */
     public function valid(): bool
     {
-        if (!isset($this->items))
+        if (!isset($this->items)) {
+
             return false;
+        }
 
         return $this->position < sizeof($this->items);
     }
@@ -75,11 +80,13 @@ class ListBase implements Iterator, Countable
      */
     public function current(): mixed
     {
-        if (!isset($this->items))
+        if (!isset($this->items)) {
+
             return null;
+        }
 
         return $this->items[$this->position];
-    }    //
+    }
 
     /**
      * Count elements of an object.
@@ -88,8 +95,10 @@ class ListBase implements Iterator, Countable
      */
     public function count(): int
     {
-        if (!isset($this->items))
+        if (!isset($this->items)) {
+
             return 0;
+        }
 
         return sizeof($this->items);
     }
@@ -114,8 +123,9 @@ class ListBase implements Iterator, Countable
      */
     protected function push($item)
     {
-        if (!isset($this->items))
+        if (!isset($this->items)) {
             $this->items = array();
+        }
 
         array_push($this->items, $item);
     }

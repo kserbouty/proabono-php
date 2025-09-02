@@ -110,7 +110,7 @@ class Request
         }
 
         // Case Code 422 : Request syntax is correct, but its content is not.
-        else if ($response->status == 422) {
+        elseif ($response->status == 422) {
 
             $response->errors = array();
 
