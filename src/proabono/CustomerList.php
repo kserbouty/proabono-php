@@ -19,9 +19,8 @@ class CustomerList extends ListBase
      * @return Response
      * @throws Exception
      */
-    function fetch($page)
+    public function fetch($page)
     {
-
         $url = PATH_CUSTOMERS;
 
         $url = Utils::urlParam($url, 'Page', $page);
@@ -34,7 +33,6 @@ class CustomerList extends ListBase
             // and data is set:
             && (isset($response->data))
         ) {
-
             // Set pagination properties.
             $this->init($response->data);
 
@@ -45,6 +43,7 @@ class CustomerList extends ListBase
                 $this->push($customer);
             }
         }
+
         return $response;
     }
 }

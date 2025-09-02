@@ -15,7 +15,7 @@ class FeatureList extends ListBase
      * Retrieve all features from the api.
      *
      */
-    function fetch()
+    public function fetch()
     {
         // Size page set to 1000 elements directly in the url.
         $url = PATH_FEATURES;

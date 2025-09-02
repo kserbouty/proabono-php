@@ -14,7 +14,7 @@ class OfferList extends ListBase
     /**
      * Retrieve all offers from the api.
      */
-    function fetch()
+    public function fetch()
     {
         $url = PATH_OFFERS;
 

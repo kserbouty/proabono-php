@@ -20,7 +20,7 @@ class UsageList extends ListBase
      * @return Response
      * @throws Exception
      */
-    function fetchByCustomer($refCustomer, $refreshCache = false)
+    public function fetchByCustomer($refCustomer, $refreshCache = false)
     {
         /////////// CACHING STRATEGY ///////////
 
@@ -46,6 +46,7 @@ class UsageList extends ListBase
                 // success
                 return Response::success();
             }
+
             return Response::usageNotFound();
         }
 
@@ -91,7 +92,7 @@ class UsageList extends ListBase
      * @return Response
      * @throws Exception
      */
-    function fetchByFeature($refFeature, $page)
+    public function fetchByFeature($refFeature, $page)
     {
         $url = PATH_USAGES;
 
@@ -123,7 +124,6 @@ class UsageList extends ListBase
 
         return $response;
     }
-
 
     /**
      * @param $refCustomer
@@ -199,7 +199,6 @@ class UsageList extends ListBase
      */
     public function validateSubscription($refCustomer, $idCustomer, $idSubscription)
     {
-
         $url = PATH_USAGES;
 
         $url = Utils::urlParam($url, 'IdCustomer', $idCustomer);
@@ -219,6 +218,7 @@ class UsageList extends ListBase
 
             return $this->fetchByCustomer($refCustomer, true);
         }
+
         return $response;
     }
 }

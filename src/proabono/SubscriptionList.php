@@ -21,7 +21,7 @@ class SubscriptionList extends ListBase
      * @return Response
      * @throws Exception
      */
-    function fetch($page, $refCustomer, $refCustomerBuyer)
+    public function fetch($page, $refCustomer, $refCustomerBuyer)
     {
         $url = PATH_SUBSCRIPTIONS;
 
