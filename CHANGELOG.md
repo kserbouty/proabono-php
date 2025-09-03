@@ -31,7 +31,7 @@
 
 ### Removed
 
-- Remove composer dependency.
+- Remove Composer files from the project.
 
 ## 2019-01-07
 
