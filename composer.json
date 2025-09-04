@@ -1,0 +1,36 @@
+{
+  "name": "proabono/proabono-php",
+  "type": "library",
+  "description": "PHP Client Library for the ProAbono API",
+  "keywords": [
+    "api",
+    "client",
+    "proabono",
+    "subscription billing"
+  ],
+  "homepage": "https://proabono.com/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Karim Serbouty",
+      "email": "kserbouty@outlook.com",
+      "role": "Developer"
+    },
+    {
+      "name": "Olivier Moreau",
+      "email": "olivier.moreau@proabono.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">= 5.6.0",
+    "curl/curl": "^2.0",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "autoload": {
+    "files": [
+      "src/proabono.php"
+    ]
+  }
+}

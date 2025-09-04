@@ -9,5 +9,6 @@
 *.png               binary
 
 # Configuration
+*.json              text
 .gitattributes      text
 .gitignore          text

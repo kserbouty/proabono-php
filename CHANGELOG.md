@@ -1,5 +1,11 @@
 # Changelog
 
+## 2025-09-04
+
+### Changed
+
+- Update composer metadata with current email.
+
 ## 2025-09-02
 
 ### Added
@@ -28,10 +34,6 @@
 - Update .gitignore for Visual Studio Code.
 - Update LICENSE copyright to 2025.
 - Update README template, add logo with badges.
-
-### Removed
-
-- Remove Composer files from the project.
 
 ## 2019-01-07
 
