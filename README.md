@@ -9,11 +9,11 @@
 <br>
 
 <p align="center">
-    <a href="https://www.php.net/releases/8.4/en.php">
-        <img src="https://img.shields.io/badge/php-8.4-777BB4?style=flat&logo=php"
+    <a href="https://www.php.net/">
+        <img src="https://img.shields.io/badge/php-8-777BB4?style=flat&logo=php"
         alt="php-8" /></a>
     <a href="https://www.php.net/manual/en/book.curl.php">
-        <img src="https://img.shields.io/badge/curl-2.0-777BB4?style=flat&logo=php"
+        <img src="https://img.shields.io/badge/curl-2-777BB4?style=flat&logo=php"
         alt="curl-2" /></a>
     <a href="./LICENSE.md">
         <img src="https://img.shields.io/badge/license-mit-181717?style=flat&logo=github"
