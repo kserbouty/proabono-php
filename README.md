@@ -18,7 +18,7 @@
     <a href="./LICENSE.md">
         <img src="https://img.shields.io/badge/license-mit-181717?style=flat&logo=github"
         alt="license-mit" /></a>
-    <a href="https://github.com/kserbouty/proabono">
+    <a href="https://github.com/kserbouty/proabono-php">
         <img src="https://img.shields.io/badge/status-complete-darkblue?style=flat&logo=github"
         alt="status-complete" /></a>
 </p>
