@@ -4,39 +4,40 @@
 
 ### Changed
 
-- Update composer metadata with current email.
+- Update package information.
+- Update git configuration for Composer.
 
 ## 2025-09-02
 
 ### Added
 
-- Add return types to match Iterator and Countable methods.
-- Add namespaces for classes and constants.
-- Add missing explicit visibility on class methods.
+- Add missing visibility on methods.
+- Add missing return types to match Iterator and Countable.
+- Add missing brackets on if statements.
+- Add namespaces enabling the use keyword for classes and constants.
 
 ### Changed
 
-- Update if and elseif statements to improve readability.
-- Rename functions and variables as regular expressions.
-- Replace deprecated parameters for date functions.
 - Format PHP scripts with PSR-12 coding style.
-- Update copyright metadata to 2025.
+- Rename functions and variables with the wrong convention.
+- Shorten else if statements with elseif.
+- Replace the deprecated parameter used by the date function.
 
 ## 2025-09-01
 
 ### Added
 
 - Create a CHANGELOG for the project.
-- Configure the repository with .gitattributes.
+- Create a .gitattributes for the repository.
 
 ### Changed
 
 - Update .gitignore for Visual Studio Code.
-- Update LICENSE copyright to 2025.
-- Update README template, add logo with badges.
+- Update LICENSE copyright.
+- Replace README template.
 
 ## 2019-01-07
 
 ### Added
 
-- Initial release.
+- Initial release from 2019.
