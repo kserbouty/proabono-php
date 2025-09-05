@@ -2,7 +2,7 @@
 
 <p align="center">
     <br>
-    <img src="assets/proabono-logo.png" alt="proabono-logo" width="300px" height="300px"/>
+    <img src="assets/proabono-logo.png" alt="proabono-logo" width="300" height="300"/>
     <br>
 </p>
 
@@ -17,7 +17,7 @@
         alt="curl-2" /></a>
     <a href="./LICENSE.md">
         <img src="https://img.shields.io/badge/license-mit-181717?style=flat&logo=github"
-        alt="license-mit" /></a>
+        alt="mit-license" /></a>
     <a href="https://github.com/kserbouty/proabono-php">
         <img src="https://img.shields.io/badge/status-complete-darkblue?style=flat&logo=github"
         alt="status-complete" /></a>
@@ -30,16 +30,6 @@ The ProAbono PHP Client Library is an open source library to interact with ProAb
 ## Installation
 
 > Package frozen on [Packagist.org](https://packagist.org/packages/proabono/proabono-php) due to an error with credentials between WSL and GitHub.
-
-If you're using Composer, you can simply add a dependency on proabono/proabono-php to your project's composer.json file.
-
-```
-{
-    “require”: {
-        “proabono/proabono-php”: “dev-master”
-    }
-}
-```
 
 ## Configuration
 
