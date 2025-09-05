@@ -1,4 +1,4 @@
-<h1 align="center">PHP Client Library for the ProAbono API</h1>
+<h1 align="center">ProAbono PHP Client Library</h1>
 
 <p align="center">
     <br>
