@@ -16,10 +16,10 @@
         <img src="https://img.shields.io/badge/curl-2-777BB4?style=flat&logo=php"
         alt="curl-2" /></a>
     <a href="./LICENSE.md">
-        <img src="https://img.shields.io/badge/license-mit-181717?style=flat&logo=github"
+        <img src="https://img.shields.io/badge/license-mit-lightblue?style=flat&logo=github"
         alt="mit-license" /></a>
     <a href="https://github.com/kserbouty/proabono-php">
-        <img src="https://img.shields.io/badge/status-complete-darkblue?style=flat&logo=github"
+        <img src="https://img.shields.io/badge/status-complete-lightblue?style=flat&logo=github"
         alt="status-complete" /></a>
 </p>
 
