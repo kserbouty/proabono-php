@@ -17,7 +17,7 @@
         alt="curl-2" /></a>
     <a href="./LICENSE.md">
         <img src="https://img.shields.io/badge/license-mit-lightblue?style=flat&logo=github"
-        alt="mit-license" /></a>
+        alt="license-mit" /></a>
     <a href="https://github.com/kserbouty/proabono-php">
         <img src="https://img.shields.io/badge/status-complete-lightblue?style=flat&logo=github"
         alt="status-complete" /></a>
