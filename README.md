@@ -25,11 +25,11 @@
 
 ## About
 
-The ProAbono PHP Client Library is an open source library to interact with ProAbono’s subscription management from your PHP website. This library interacts with the ProAbono Live API.
+The ProAbono PHP Client Library is an open source library to interact with [ProAbono](https://www.proabono.com/en/)’s subscription management from your PHP website. This library interacts with the ProAbono [Live API](https://docs.proabono.com/api/#introduction).
 
 ## Installation
 
-> Package frozen on [Packagist.org](https://packagist.org/packages/proabono/proabono-php) due to an error with credentials between WSL and GitHub.
+> Package frozen on [Packagist](https://packagist.org/packages/proabono/proabono-php), repository currently unavailable for Composer.
 
 ## Configuration
 
@@ -44,7 +44,7 @@ In a config.php file, you need to set the 4 ProAbono Settings :
 
 ## Documentation
 
-Read the [ProAbono API documentation](https://docs.proabono.com/api/#introduction) for more information about the API.
+Read the ProAbono [API documentation](https://docs.proabono.com/api/#getting-started) for more information about the API.
 
 ## Changelog
 
@@ -52,4 +52,4 @@ All notable changes to this project will be documented in the [CHANGELOG](./CHAN
 
 ## License
 
-This project is released under [the MIT License](./LICENSE.md).
+This project is released under the [MIT License](./LICENSE.md).
