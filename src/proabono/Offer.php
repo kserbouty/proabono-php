@@ -10,7 +10,7 @@ use const ProAbono\PATH_OFFER;
  * Manage the access to the api only for Offer.
  *
  * @link https://docs.proabono.com/api/#api---offers
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Offer

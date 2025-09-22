@@ -5,7 +5,7 @@ namespace ProAbono\Api;
 /**
  * Response model
  *
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Response

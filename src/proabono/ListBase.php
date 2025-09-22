@@ -8,7 +8,7 @@ use Countable;
 /**
  * Base class for all list objects
  *
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class ListBase implements Iterator, Countable

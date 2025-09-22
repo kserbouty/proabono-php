@@ -10,7 +10,7 @@ use const ProAbono\PATH_USAGES;
  * Manage multiple usages in an object.
  *
  * @link https://docs.proabono.com/api/#api---usages
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright © 2018 ProAbono
  * @license MIT
  */
 class UsageList extends ListBase

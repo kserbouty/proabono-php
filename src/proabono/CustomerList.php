@@ -10,7 +10,7 @@ use const ProAbono\PATH_CUSTOMERS;
  * Manage multiple customers in an object.
  *
  * @link https://docs.proabono.com/api/#api---customers
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class CustomerList extends ListBase

@@ -10,7 +10,7 @@ use const ProAbono\PATH_PRICING_USAGE;
  * Manage the access to the api only for Compute Pricing.
  *
  * @link https://docs.proabono.com/api/#api---compute-pricing
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Pricing

@@ -10,7 +10,7 @@ use const ProAbono\PATH_SUBSCRIPTION;
  * Manage the access to the api only for Subscription.
  *
  * @link https://docs.proabono.com/api/#api---subscriptions
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Subscription

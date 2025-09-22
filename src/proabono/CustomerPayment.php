@@ -9,7 +9,7 @@ use const ProAbono\PATH_PAYMENT_SETTINGS;
  *
  * Manage the access to the api for the payment settings.
  *
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class CustomerPayment

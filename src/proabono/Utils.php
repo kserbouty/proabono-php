@@ -5,7 +5,7 @@ namespace ProAbono\Api;
 /**
  * Utility model
  *
- * @copyright Copyright (c) 2018 ProAbono
+ * @copyright Copyright © 2018 ProAbono
  * @license MIT
  */
 class Utils

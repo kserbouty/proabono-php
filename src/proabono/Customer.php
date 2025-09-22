@@ -10,7 +10,7 @@ use const ProAbono\PATH_CUSTOMER;
  * Manage the access to the api only for Customer.
  *
  * @link https://docs.proabono.com/api/#api---customers
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Customer

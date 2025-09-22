@@ -10,7 +10,7 @@ use const ProAbono\PATH_FEATURE;
  * Manage the access to the api only for Feature.
  *
  * @link https://docs.proabono.com/api/#api---features
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Feature

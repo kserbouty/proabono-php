@@ -10,7 +10,7 @@ use const ProAbono\PATH_FEATURES;
  * Manage multiple features in an object.
  *
  * @link https://docs.proabono.com/api/#api---features
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class FeatureList extends ListBase

@@ -9,7 +9,7 @@ use const ProAbono\PATH_BILLING_ADDRESS;
  *
  * Manage the access to the api for the billing address.
  *
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class CustomerAddress

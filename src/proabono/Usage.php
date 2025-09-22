@@ -10,7 +10,7 @@ use const ProAbono\PATH_USAGE;
  * Manage the access to the api only for Usage.
  *
  * @link https://docs.proabono.com/api/#api---usages
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class Usage

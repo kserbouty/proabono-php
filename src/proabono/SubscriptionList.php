@@ -10,7 +10,7 @@ use const ProAbono\PATH_SUBSCRIPTIONS;
  * Manage multiple subscriptions in an object.
  *
  * @link https://docs.proabono.com/api/#api---subscriptions
- * @copyright Copyright (c) 2025 ProAbono
+ * @copyright Copyright © 2025 ProAbono
  * @license MIT
  */
 class SubscriptionList extends ListBase
