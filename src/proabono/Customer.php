@@ -74,8 +74,9 @@ class Customer
      */
     public function fetch($refCustomer)
     {
-
-        /////////// CACHING STRATEGY ///////////
+        /**
+         * Caching strategy.
+         */
         if (ProAbono::$useCaching) {
             // Search for that customer into the cache
             $cached = ProAbonoCache::get($refCustomer);
@@ -92,8 +93,7 @@ class Customer
                 // Then exit
                 return Response::success();
             }
-        }
-        ////////////////////////////////////////
+        } // ending caching strategy
 
         $url = PATH_CUSTOMER;
 

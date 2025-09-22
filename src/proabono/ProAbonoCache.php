@@ -12,8 +12,9 @@ namespace ProAbono\Api;
  */
 class ProAbonoCache
 {
-    /////////////// STATIC ///////////////
-
+    /**
+     * Static.
+     */
     public static function get($refCustomer)
     {
         // look for the cache-by-user table
@@ -96,12 +97,11 @@ class ProAbonoCache
         }
         // and store
         $_SESSION['PROABONO_CACHE_BY_USER'] = $cacheByCustomer;
-    }
+    } // end static
 
-    //////////////////////////////////////
-
-    ////////////// INSTANCE //////////////
-
+    /**
+     * Instance.
+     */
     public $customer = null;
     public $usages = null;
     private $timestamp = null;
@@ -110,7 +110,5 @@ class ProAbonoCache
     {
         // if timestamp is older than x seconds
         return (time() - $this->timestamp) >= ProAbono::$cacheExpires;
-    }
-
-    //////////////////////////////////////
+    } // end instance
 }

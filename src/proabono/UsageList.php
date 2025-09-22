@@ -26,8 +26,9 @@ class UsageList extends ListBase
      */
     public function fetchByCustomer($refCustomer, $refreshCache = false)
     {
-        /////////// CACHING STRATEGY ///////////
-
+        /**
+         * Caching strategy.
+         */
         if (ProAbono::$useCaching) {
 
             // get the cached data
@@ -52,9 +53,7 @@ class UsageList extends ListBase
             }
 
             return Response::usageNotFound();
-        }
-
-        /////////////////////////////////
+        } // ending caching strategy
 
         // If we do not use the cache
 
@@ -151,7 +150,6 @@ class UsageList extends ListBase
         ) {
             return $cached->usages;
         }
-        /////////////////////////////////
 
         // if not cached OR if cache is expired
 

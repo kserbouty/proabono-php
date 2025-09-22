@@ -121,7 +121,9 @@ class Usage
      */
     public function fetch($refFeature, $refCustomer, $refreshCache = false)
     {
-        /////////// CACHING STRATEGY ///////////
+        /**
+         * Caching strategy.
+         */
         if (ProAbono::$useCaching) {
 
             // get the cached data
@@ -144,8 +146,7 @@ class Usage
 
             // success
             return Response::success();
-        }
-        ////////////////////////////////////////
+        } // ending caching strategy
 
         $url = PATH_USAGE;
 
