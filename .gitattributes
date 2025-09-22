@@ -1,14 +1,14 @@
 # Default
 *                   text=auto
 
-# Source
+# Scripts
 *.php               text diff=php
-
-# Documentation
-*.md                text diff=markdown
-*.png               binary
 
 # Configuration
 *.json              text
 .gitattributes      text
 .gitignore          text
+
+# Documentation
+*.md                text diff=markdown
+*.png               binary

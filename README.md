@@ -1,4 +1,4 @@
-<h1 align="center">ProAbono PHP Client Library</h1>
+<h1 align="center">ProAbono - PHP Client Library</h1>
 
 <p align="center">
     <br>
@@ -29,7 +29,7 @@ The ProAbono PHP Client Library is an open source library to interact with [ProA
 
 ## Installation
 
-> Package frozen on [Packagist](https://packagist.org/packages/proabono/proabono-php), repository currently unavailable for Composer.
+> Library frozen on [Packagist](https://packagist.org/packages/proabono/proabono-php) due to an error with GitHub.
 
 ## Configuration
 
@@ -42,7 +42,7 @@ In a config.php file, you need to set the 4 ProAbono Settings :
 - endpoint (ex: https://api-42.proabono.com)
 - public pricing url (ex: https://demo-php-eur.proabono.com/pricing)
 
-## Documentation
+## Support
 
 Read the ProAbono [API documentation](https://docs.proabono.com/api/#getting-started) for more information about the API.
 

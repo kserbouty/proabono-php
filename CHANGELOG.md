@@ -1,43 +1,48 @@
 # Changelog
 
+## 2025-09-22
+
+### Changed
+
+- Replace copyright signs with the ASCII table.
+- Replace positional markers with comments.
+
 ## 2025-09-04
 
 ### Changed
 
 - Update package information.
-- Update git configuration for Composer.
 
 ## 2025-09-02
 
 ### Added
 
-- Add missing visibility on methods.
-- Add missing return types to match Iterator and Countable.
-- Add missing brackets on if statements.
-- Add namespaces enabling the use keyword for classes and constants.
+- Add missing brackets.
+- Add missing modifiers.
+- Fix Iterator and Countable implementation.
 
 ### Changed
 
-- Format PHP scripts with PSR-12 coding style.
-- Rename functions and variables with the wrong convention.
-- Shorten else if statements with elseif.
-- Replace the deprecated parameter used by the date function.
+- Format scripts with PSR-12 coding style.
+- Fix naming convention.
+- Replace a deprecated parameter in the date function.
+- Replace require with namespaces.
 
 ## 2025-09-01
 
 ### Added
 
-- Create a CHANGELOG for the project.
-- Create a .gitattributes for the repository.
+- Add a CHANGELOG.
+- Add a .gitattributes.
 
 ### Changed
 
-- Update .gitignore for Visual Studio Code.
-- Update LICENSE copyright.
-- Replace README template.
+- Update the README.
+- Update the LICENSE.
+- Update the .gitignore.
 
 ## 2019-01-07
 
 ### Added
 
-- Initial release from 2019.
+- Initial release.
