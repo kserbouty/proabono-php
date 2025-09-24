@@ -29,7 +29,7 @@ The ProAbono PHP Client Library is an open source library to interact with [ProA
 
 ## Installation
 
-> Library frozen on [Packagist](https://packagist.org/packages/proabono/proabono-php) due to an error with GitHub.
+> Library frozen on [Packagist](https://packagist.org/packages/proabono/proabono-php) due to an error with the repository.
 
 ## Configuration
 
